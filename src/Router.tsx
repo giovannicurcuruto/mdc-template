@@ -27,7 +27,7 @@ export default function RoutesComponent() {
                     <Route path={ROUTESPATHS.CHURCH} element={<ChurchsPage/>} />
                     <Route path={ROUTESPATHS.CONTENT} element={<ContentPage/>} />
                     <Route path={ROUTESPATHS.CONTACT} element={<ContactPage/>} />
-                    <Route path={ROUTESPATHS.OUR_SCHEDULE} element={<OurSchedulePage/>}/>
+                    <Route path={ROUTESPATHS.OUR_SCHEDULE} element={<OurSchedulePage/>} />
                 </Route>
             </Routes>
         </BrowserRouter>
