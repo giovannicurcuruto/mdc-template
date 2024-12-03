@@ -57,4 +57,9 @@ export const SocialMedia = styled.div`
   a > i {
     color: var(--mc-grey-light);
   }
+
+  i {
+    color: black;
+  }
+
 `;
