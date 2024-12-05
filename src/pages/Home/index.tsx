@@ -5,13 +5,14 @@ import { BannerSecondary, BgBox, CardContainer, ImgPastors, Pastors, PastorsImgC
 //importações que depois serão removidas
 import foto_patores from "../../assets/pastors.jpg";
 import ImageText from "../../components/ImageText";
-import { BannerEncontre, BannerSemanal } from "../../components/Banners";
+import { BannerEncontre, BannerHome, BannerSemanal } from "../../components/Banners";
 import CardsComponents from "../../components/Cards";
 
 export default function HomePage() {
     return (
         <>
             <section>
+                <BannerHome />
                 <Pastors>
                     <PastorsImgContent>
                         <BgBox></BgBox>

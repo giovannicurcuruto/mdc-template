@@ -1,6 +1,7 @@
 
 import RoutesComponent from "./Router"
 import { GlobalStyle } from "./style"
+import './lib/fontawesome'
 
 function App() {
   return (

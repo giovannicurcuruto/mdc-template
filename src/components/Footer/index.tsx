@@ -1,6 +1,7 @@
 import { Content, ContentFooter, ContentFooterSocialMedia, Footer, LogoFooter, SocialMedia } from "./style";
 
 import logo from '../../assets/logo2.png';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //importações para definição do layout
 
@@ -42,39 +43,40 @@ export default function FooterComponent() {
                         </address>
                     </Content>
                 </ContentFooter>
-                <ContentFooterSocialMedia>
-                    <SocialMedia>
-                        <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>
-                            <i className="fa-brands fa-facebook-f"></i>
-                        </a>
-                    </SocialMedia>
-                    <SocialMedia>
-                        <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>
-                            <i className="fa-brands fa-instagram"></i>
-                        </a>
-                    </SocialMedia>
-                    <SocialMedia>
-                        <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>
-                            <i className="fa-brands fa-twitter"></i>
-                        </a>
-                    </SocialMedia>
-                    <SocialMedia>
-                        <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>
-                            <i className="fa-brands fa-youtube"></i>
-                        </a>
-                    </SocialMedia>
-                    <SocialMedia>
-                        <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>
-                            <i className="fa-brands fa-spotify"></i>
-                        </a>
-                    </SocialMedia>
-                    <SocialMedia>
-                        <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>
-                            <i className="fa-brands fa-soundcloud"></i>
-                        </a>
-                    </SocialMedia>
-                </ContentFooterSocialMedia>
             </Footer>
+            <ContentFooterSocialMedia>
+                <SocialMedia>
+                    <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>                        
+                        <FontAwesomeIcon icon={['fab', 'soundcloud']}  />
+                    </a>
+                </SocialMedia>
+                <SocialMedia>
+                    <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>                        
+                        <FontAwesomeIcon icon={['fab', 'instagram']}  />
+                    </a>
+                </SocialMedia>
+                <SocialMedia>
+                    <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>                        
+                        <FontAwesomeIcon icon={['fab', 'twitter']}  />
+                    </a>
+                </SocialMedia>
+                <SocialMedia>
+                    <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>                        
+                        <FontAwesomeIcon icon={['fab', 'youtube']}  />
+                    </a>
+                </SocialMedia>
+                <SocialMedia>
+                    <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>                        
+                        <FontAwesomeIcon icon={['fab', 'spotify']}  />
+                    </a>
+                </SocialMedia>
+                <SocialMedia>
+                    <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>                        
+                        <FontAwesomeIcon icon={['fab', 'soundcloud']}  />
+                    </a>
+                </SocialMedia>
+            </ContentFooterSocialMedia>
+
         </>
     )
 }
