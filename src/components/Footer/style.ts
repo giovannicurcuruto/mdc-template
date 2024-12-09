@@ -54,12 +54,14 @@ export const SocialMedia = styled.div`
   padding: 2rem;
   font-size: 2.5rem;
 
-  a > i {
-    color: var(--mc-grey-light);
-  }
 
   i {
     color: black;
+  }
+
+  a {
+    color: var(--mc-grey-light);
+    text-decoration: none;
   }
 
 `;

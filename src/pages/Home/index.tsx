@@ -1,5 +1,5 @@
 
-import { BannerSecondary, BgBox, CardContainer, ImgPastors, Pastors, PastorsImgContent, PastorsText } from "./styles";
+import { BannerSecondary, BgBox, CardContainer, ImgPastors, LastGrid, Pastors, PastorsImgContent, PastorsText } from "./styles";
 
 
 //importações que depois serão removidas
@@ -42,9 +42,9 @@ export default function HomePage() {
                 <section>
                     <BannerEncontre />
                 </section>
-                <section>
+                <LastGrid>
                     <ImageText />
-                </section>
+                </LastGrid>
 
             </section>
         </>

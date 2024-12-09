@@ -121,3 +121,9 @@ export const CardContainer = styled.div`
     flex-direction: column;
   }
 `;
+
+export const LastGrid = styled.div`  
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 0;
+`;

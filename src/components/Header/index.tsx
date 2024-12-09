@@ -26,7 +26,7 @@ export default function HeaderComponent() {
                                 <LinkMenu href="/about">Quem somos</LinkMenu>
                             </li>
                             <li>
-                                <LinkMenu href="/churchs">Igrejas</LinkMenu>
+                                <LinkMenu href="/church">Igrejas</LinkMenu>
                             </li>
                             <li>
                                 <LinkMenu href="/content">Conteúdos</LinkMenu>

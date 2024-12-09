@@ -31,13 +31,7 @@ export default function AboutPage() {
                     <ImageTextLandscape />
                 </AboutContent>
 
-
-
-
-
             </Main>
-
-
         </>
     )
 }

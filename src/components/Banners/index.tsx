@@ -1,7 +1,8 @@
-import { BannerImage, BannerSecondary } from "./style";
+import { BannerBackground, BannerImage, BannerSecondary } from "./style";
 import img_banner from '../../assets/banner_04.jpg';
 import img_banner_semanal from '../../assets/banner_01.jpg';
 import img_banner_church from '../../assets/church.jpg';
+import logo_banner from '../../assets/logo2.png';
 
 export function BannerEncontre() {
     return (
@@ -26,12 +27,19 @@ export function BannerSemanal() {
 }
 
 export function BannerHome() {
-
     return (
         <>
-            <BannerSecondary>
-                <img src={img_banner_church} alt="Agenda semanal" />
-            </BannerSecondary>
+            <BannerBackground
+                style={{ backgroundImage: `url(${img_banner_church})` }}  >   
+
+                <div></div>
+                <div>
+                    <img src={logo_banner} alt=""  />
+                </div>
+                
+
+
+            </BannerBackground>
         </>
     )
 }
