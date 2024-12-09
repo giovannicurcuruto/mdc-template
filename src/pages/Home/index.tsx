@@ -5,7 +5,7 @@ import { BannerSecondary, BgBox, CardContainer, ImgPastors, LastGrid, Pastors, P
 //importações que depois serão removidas
 import foto_patores from "../../assets/pastors.jpg";
 import ImageText from "../../components/ImageText";
-import { BannerEncontre, BannerHome, BannerSemanal } from "../../components/Banners";
+import { BannerEncontre, BannerHome, BannerSlider } from "../../components/Banners";
 import CardsComponents from "../../components/Cards";
 
 export default function HomePage() {
@@ -29,8 +29,12 @@ export default function HomePage() {
 
                 </Pastors>
 
-                <BannerSecondary>
+                {/* <BannerSecondary>
                     <BannerSemanal />
+                </BannerSecondary> */}
+
+                <BannerSecondary>
+                    <BannerSlider />
                 </BannerSecondary>
 
                 <CardContainer>
