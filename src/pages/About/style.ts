@@ -20,6 +20,7 @@ export const AboutContent = styled.section`
   p {
     font-size: 1.5rem;
     width: 80%;
+    color: var(--mc-grey-light);
     margin: auto; /* Centraliza o texto caso necessário */
   }
 

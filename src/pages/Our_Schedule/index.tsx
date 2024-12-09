@@ -1,16 +1,23 @@
-import { BannerImage } from "../../components/Banners/style";
+import { BannerEncontre } from "../../components/Banners";
+import CalendarComponent from "../../components/calendar";
 import ImageText from "../../components/ImageText";
 import ImageTextRight from "../../components/ImageTextRight";
+import { ContainerCalendar, Wrapper } from "./style";
 
-export default function OurSchedulePage(){
-    return(
+export default function OurSchedulePage() {
+    return (
         <>
-            <BannerImage/>
+            <BannerEncontre />
+            <Wrapper>
 
-            <ImageText/>
-            <ImageTextRight/>
-        
-        
+                <ImageText />
+                <ImageTextRight />
+                <br />
+                <ContainerCalendar>
+                    <CalendarComponent />
+                </ContainerCalendar>
+            </Wrapper>
+
         </>
     )
 }
