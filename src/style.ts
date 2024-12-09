@@ -2,11 +2,17 @@ import styled, { createGlobalStyle } from 'styled-components';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import 'tailwindcss/tailwind.css';
 
 
 export const GlobalStyle = createGlobalStyle`
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
   @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+  
 
   :root {
     --max-width: 1200px;

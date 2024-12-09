@@ -1,10 +1,20 @@
-import { BannerImage } from "../../components/Banners/style";
+import { BannerEncontre } from "../../components/Banners";
+import Formulario from "../../components/Forms";
+import { Wrapper } from "./style";
 
-export default function ContactPage(){
-    return(
+export default function ContactPage() {
+    return (
         <>
-            <BannerImage/>
-        
+            <BannerEncontre />
+            <Wrapper>
+                <div>mapa</div>
+                <div>
+                    <Formulario/>
+                </div>
+
+            </Wrapper>
+
+
         </>
     )
 }
