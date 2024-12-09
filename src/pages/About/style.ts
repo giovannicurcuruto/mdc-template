@@ -9,15 +9,17 @@ export const AboutContent = styled.section`
   max-width: var(--max-width);
   padding: 2rem;
   margin: auto;
+  display: grid;
+  place-items: center;
 
   h1 {
-    font-size: 2rem;
+    font-size: 2.7rem;
     padding-bottom: 1rem;
   }
 
   p {
-    font-size: 1rem;
-    width: 60%;
+    font-size: 1.5rem;
+    width: 80%;
     margin: auto; /* Centraliza o texto caso necessário */
   }
 

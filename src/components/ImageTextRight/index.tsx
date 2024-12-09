@@ -1,5 +1,6 @@
-import { BgBox, ImageTextContainer, ImgBox, ImgContent, TextContent } from "./style";
+import { BgBox, Button, ImageTextContainer, ImgBox, ImgContent, TextContent } from "./style";
 import Img01 from '../../assets/img01.jpg';
+
 
 export default function ImageTextRight() {
     return (
@@ -13,7 +14,7 @@ export default function ImageTextRight() {
                         quibusdam iste dolorum blanditiis similique, quisquam amet,
                         consequatur laboriosam minima.
                     </p>
-                    <button type="button">Saiba Mais</button>
+                    <Button type="button">Saiba Mais</Button>
                 </TextContent>
                 <ImgContent>
                     <BgBox />
@@ -23,8 +24,6 @@ export default function ImageTextRight() {
                     />
                 </ImgContent>
             </ImageTextContainer>
-
-
 
         </>
     )

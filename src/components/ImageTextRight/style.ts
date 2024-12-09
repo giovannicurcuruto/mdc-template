@@ -13,6 +13,9 @@ export const ImageTextContainer = styled.section`
 export const TextContent = styled.div`
   width: 50%;
   padding-left: 3rem;
+  display: grid;
+  place-items: center;
+  
 
   h2 {
     font-size: 1.6rem;
@@ -27,6 +30,8 @@ export const TextContent = styled.div`
     color: var(--mc-grey-light);
     margin-bottom: 3rem;
   }
+ 
+
 `;
 
 export const ImgContent = styled.div`
@@ -49,4 +54,18 @@ export const ImgBox = styled.img`
   width: 100%;
   object-fit: contain;
   height: auto;
+`;
+
+export const Button = styled.button`
+  padding: 0.75rem 1.5rem;  
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 250px;
+
+  &:hover {
+    background-color: #005bb5;
+  }
+
 `;

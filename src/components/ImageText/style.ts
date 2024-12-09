@@ -31,6 +31,8 @@ export const ImgBox = styled.img`
 export const TextContent = styled.div`
   width: 45%;
   text-align: left;
+  display: grid;
+  place-items: center;
 
   h2 {
     font-size: 1.5rem;
@@ -45,12 +47,13 @@ export const TextContent = styled.div`
 `;
 
 export const Button = styled.button`
-  padding: 0.75rem 1.5rem;
+  
   background-color: #0070f3;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  width: 250px;
 
   &:hover {
     background-color: #005bb5;
