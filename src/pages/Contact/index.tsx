@@ -1,5 +1,7 @@
 import { BannerEncontre } from "../../components/Banners";
 import Formulario from "../../components/Forms";
+import MapComponent from "../../components/Leaflet";
+//import Maps from "../../components/Maps";
 import { Wrapper } from "./style";
 
 export default function ContactPage() {
@@ -7,9 +9,11 @@ export default function ContactPage() {
         <>
             <BannerEncontre />
             <Wrapper>
-                <div>mapa</div>
                 <div>
-                    <Formulario/>
+                    <MapComponent />
+                </div>
+                <div>
+                    <Formulario />
                 </div>
 
             </Wrapper>

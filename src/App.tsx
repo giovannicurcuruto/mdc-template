@@ -2,6 +2,7 @@
 import RoutesComponent from "./Router"
 import { GlobalStyle } from "./style"
 import './lib/fontawesome';
+import 'leaflet/dist/leaflet.css';
 import './style.css';
 
 
