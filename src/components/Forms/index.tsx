@@ -6,7 +6,6 @@ export default function Formulario() {
     return (
         <>
             <Container>
-
                 <FormWrapper>
                     <Form action="#" method="POST">
                         {/* Primeiro Nome */}
