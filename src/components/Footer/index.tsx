@@ -57,7 +57,7 @@ export default function FooterComponent() {
                 </SocialMedia>
                 <SocialMedia>
                     <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>                        
-                        <FontAwesomeIcon icon={['fab', 'twitter']}  />
+                        <FontAwesomeIcon icon={['fab', 'x-twitter']}  />
                     </a>
                 </SocialMedia>
                 <SocialMedia>

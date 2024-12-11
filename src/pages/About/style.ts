@@ -15,6 +15,7 @@ export const AboutContent = styled.section`
   h1 {
     font-size: 2.7rem;
     padding-bottom: 1rem;
+    color: var(--mc-grey-light);
   }
 
   p {
