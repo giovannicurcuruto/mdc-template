@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
-
-export const ContainerChurchs = styled.div`
-    
+export const ContainerChurchs = styled.div`   
 
 `;
 
 export const Card = styled.div`
   max-width: 24rem;
+  height: 45rem;
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -36,7 +35,7 @@ export const CardTitle = styled.h5`
 `;
 
 export const CardText = styled.p`
-  font-size: 0.8rem;
+  font-size: 1.3rem;
   line-height: 1.5rem;
   color: #374151;
 `;

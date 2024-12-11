@@ -35,7 +35,7 @@ export default function HeaderComponent() {
                                 <LinkMenu href="/our_schedule">Nossa Programação</LinkMenu>
                             </li>
                             <li>
-                                <LinkMenu href="www.maisnews.com.br/">Notícias</LinkMenu>
+                                <LinkMenu href="http://www.maisnews.com.br/">Notícias</LinkMenu>
                             </li>
                             <li>
                                 <LinkMenu href="/contact">Contato</LinkMenu>

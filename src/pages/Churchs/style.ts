@@ -14,11 +14,16 @@ export const AboutContent = styled.section`
     color: var(--mc-grey-light);
   }
 
+  h4 {    
+    padding-bottom: 1rem;
+    color: var(--mc-grey-light);
+  }
+
   p {
-    font-size: 1.5rem;
+    
     width: 80%;
     color: var(--mc-grey-light);
-    margin: auto; /* Centraliza o texto caso necessário */
+    //margin: auto; /* Centraliza o texto caso necessário */
   }
 
   > hr {

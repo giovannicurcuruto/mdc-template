@@ -21,9 +21,12 @@ export default function FoundChurchs(props: FoundChurchsProps) {
                     {/* Card Content */}
                     <CardContent>
                         <CardTitle>{props.name}</CardTitle>
-                        <CardText>Endereço: {props.address}</CardText>
-
-                        <CardText> Cidade: {props.city}</CardText>
+                        <CardText>
+                            Endereço: {props.address}
+                        </CardText>
+                        <CardText>
+                            Cidade: {props.city}
+                        </CardText>
                         <CardText>
                             Horários/Dias dos Cultos: {props.cults}
                         </CardText>
