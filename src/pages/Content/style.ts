@@ -13,6 +13,7 @@ export const AboutContent = styled.section`
   h1 {
     font-size: 2rem;
     padding-bottom: 1rem;
+    color: white;
   }
 
   p {
@@ -23,4 +24,11 @@ export const AboutContent = styled.section`
   > hr {
     margin: 4rem 0;
   }
+`;
+
+export const GridSection = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+
 `;

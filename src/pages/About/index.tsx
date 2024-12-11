@@ -11,7 +11,7 @@ export default function AboutPage() {
             <Main>
                 <BannerEncontre />
                 <AboutContent>
-                    <h1>O que nós acreditamos!</h1>
+                    <h1>Selecione o conteúdo</h1>
                     <p>
                         Transformar a nossa cidade e região, implantando os principios e valores do Reino de Deus.
                     </p>
