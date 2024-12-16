@@ -13,34 +13,14 @@ interface CustomEvent {
   description?: string;
 }
 
-const CalendarComponent: React.FC = () => {
+interface CalendarComponentProps {
+  events: CustomEvent[];
+}
+
+const CalendarComponent: React.FC<CalendarComponentProps> = ({events}) => {
   moment.locale('pt-br');
   const localizer = momentLocalizer(moment);
 
-
-  // Lista de eventos
-  const events: CustomEvent[] = [
-    {
-      title: 'Louvor ao vivo!',
-      start: new Date(),
-      end: new Date(new Date().setHours(new Date().getHours() + 1)),
-      description: 'Louvor com o Pastor Ricardo',
-    },
-    {
-      title: 'Kids reunião!',
-      start: new Date(new Date().setDate(new Date().getDate() + 1)),
-      end: new Date(new Date().setDate(new Date().getDate() + 1)),
-      description: 'Louvor com o Pastor Ricardo com as crianças',
-      // allDay: true,
-    },
-    {
-      title: 'Louvor matinal!',
-      start: new Date('2024-12-12T14:00:00Z'),
-      end: new Date('2024-12-12T15:30:00Z'),
-      description: 'Louvor com o Pastor Ricardo pela manha!',
-      //allDay: true,
-    },
-  ];
 
 
   const formats = {
@@ -76,3 +56,113 @@ const CalendarComponent: React.FC = () => {
 };
 
 export default CalendarComponent;
+
+/**
+  // Lista de eventos
+  const events: CustomEvent[] = [
+    {
+      title: 'Louvor ao vivo!',
+      start: new Date(),
+      end: new Date(new Date().setHours(new Date().getHours() + 1)),
+      description: 'Louvor com o Pastor Ricardo',
+    },
+    {
+      title: 'Kids reunião!',
+      start: new Date(new Date().setDate(new Date().getDate() + 1)),
+      end: new Date(new Date().setDate(new Date().getDate() + 1)),
+      description: 'Louvor com o Pastor Ricardo com as crianças',
+      // allDay: true,
+    },
+    {
+      title: 'Louvor matinal!',
+      start: new Date('2024-12-12T14:00:00Z'),
+      end: new Date('2024-12-12T15:30:00Z'),
+      description: 'Louvor com o Pastor Ricardo pela manha!',
+      //allDay: true,
+    },
+    {
+      title: 'Louvor matinal!',
+      start: new Date('2024-12-12T14:00:00Z'),
+      end: new Date('2024-12-12T15:30:00Z'),
+      description: 'Louvor com o Pastor Ricardo pela manha!',
+      //allDay: true,
+    },
+    {
+      title: 'Louvor matinal!',
+      start: new Date('2024-12-12T14:00:00Z'),
+      end: new Date('2024-12-12T15:30:00Z'),
+      description: 'Louvor com o Pastor Ricardo pela manha!',
+      //allDay: true,
+    },
+    {
+      title: 'Louvor matinal!',
+      start: new Date('2024-12-12T14:00:00Z'),
+      end: new Date('2024-12-12T15:30:00Z'),
+      description: 'Louvor com o Pastor Ricardo pela manha!',
+      //allDay: true,
+    },
+    {
+      title: 'Louvor matinal!',
+      start: new Date('2024-12-12T14:00:00Z'),
+      end: new Date('2024-12-12T15:30:00Z'),
+      description: 'Louvor com o Pastor Ricardo pela manha!',
+      //allDay: true,
+    },
+    {
+      title: 'Louvor matinal!',
+      start: new Date('2024-12-12T14:00:00Z'),
+      end: new Date('2024-12-12T15:30:00Z'),
+      description: 'Louvor com o Pastor Ricardo pela manha!',
+      //allDay: true,
+    },
+    {
+      title: 'Teste 123 matinal!',
+      start: new Date('2024-12-20T14:00:00Z'),
+      end: new Date('2024-12-20T15:30:00Z'),
+      description: 'Louvor com o Pastor Ricardo pela manha!',
+      //allDay: true,
+    },
+    {
+      title: 'Louvor matinal!',
+      start: new Date('2024-12-26T14:00:00Z'),
+      end: new Date('2024-12-26T15:30:00Z'),
+      description: 'Louvor com o Pastor Ricardo pela manha!',
+      //allDay: true,
+    },
+    {
+      title: 'Natal - Vespera',
+      start: new Date('2024-12-24T14:00:00Z'),
+      end: new Date('2024-12-24T15:30:00Z'),
+      description: 'Louvor com o Pastor Ricardo pela manha!',
+      //allDay: true,
+    },
+    {
+      title: 'Louvor matinal!',
+      start: new Date('2024-12-30T14:00:00Z'),
+      end: new Date('2024-12-30T15:30:00Z'),
+      description: 'Louvor com o Pastor Ricardo pela manha!',
+      //allDay: true,
+    },
+    {
+      title: 'Louvor matinal!',
+      start: new Date('2025-01-12T14:00:00Z'),
+      end: new Date('2025-01-12T15:30:00Z'),
+      description: 'Louvor com o Pastor Ricardo pela manha!',
+      //allDay: true,
+    },
+    {
+      title: 'Louvor matinal!',
+      start: new Date('2024-12-01T19:00:00Z'),
+      end: new Date('2024-12-31T21:00:00Z'),
+      description: 'Louvor com o Pastor Ricardo pela manha!',
+      //allDay: true,
+    },
+    {
+      title: 'TESTE TESTE',
+      start: new Date('2025-01-22 14:00:00'),
+      end: new Date('2025-01-22 15:30:00'),
+      description: 'Louvor com o Pastor Ricardo pela manha!',
+      //allDay: true,
+    },
+  ];
+ */
