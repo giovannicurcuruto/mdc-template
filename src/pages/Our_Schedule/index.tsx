@@ -4,59 +4,75 @@ import CalendarComponent from "../../components/calendar";
 import ImageText from "../../components/ImageText";
 import ImageTextRight from "../../components/ImageTextRight";
 import { ContainerCalendar, Wrapper } from "./style";
+import { Sections } from "../../types/ourschedule/sections";
+import { Calendario } from "../../types/ourschedule/calendario";
 import axios from "axios";
+import { AuthDataInfo } from "../../utils/auth";
 
-interface Calendario {
-    id: number;
-    datainicio: string;
-    titulo: string;
-    datafim: string;
-    descricao: string;
-    allday: number;
-}
+
+type ApiResponse = {
+    success: boolean;
+    data: [
+      {
+        section1: Sections[];
+        section2: Sections[];
+      },
+      Calendario[]
+    ];
+  };
+
+
 
 export default function OurSchedulePage() {
-    const [data, setData] = useState<Calendario[]>([]);
-    const [error, setError] = useState<string | null>(null);
+    const [sections, setSections] = useState<Sections[]>([]);
+    const [calendario, setCalendario] = useState<Calendario[]>([]);
+    
 
-    useEffect( () => {
-        const fetchData = async () => {
+    useEffect(() => {
+        const fetchData = async () =>{
             try {
-                const response = await axios.get('https://flowchurch.pedidostec.com.br/rest.php?class=SiteService&method=getCalendarios');
-                if (response.data.sucess){
-                    setData(response.data.data);
-                } else {
-                    setError('Erro ao buscar esse endpoint');
+                const response = await axios.get<ApiResponse>(
+                    AuthDataInfo.URL+ "rest.php?class=SiteService&method=getProgPageItens",
+                    {
+                        headers:{
+                            Authorization: AuthDataInfo.TOKEN,
+                        }
+                    }
+                );
+
+                if(response.data.success) {
+                    const [ sectionsData, eventsData] = response.data.data;
+                    setSections([
+                        ...sectionsData.section1,
+                        ...sectionsData.section2,
+                    ]);
+                    setCalendario(eventsData);
+                }else{
+                    console.error("Erro ao carregar os dados da API");
                 }
-
-            } catch (err){
-                setError("Erro ao carregar os dados");
+            } catch (error){
+                console.error("Erro ao fazer a requisição:", error);
             }
-        }
-
-
+        };
 
         fetchData();
+    }, []);
 
-    }, [])
-    
-    if (error) return <p>{error}</p>;
-
+    //console.log(calendario);
+    console.log(sections);
 
 
     return (
         <>
             <BannerEncontre />
             <Wrapper>
-
                 <ImageText />
                 <ImageTextRight />
                 <br />
                 <ContainerCalendar>
-                    <CalendarComponent events={data} />
+                    <CalendarComponent events={calendario} />
                 </ContainerCalendar>
             </Wrapper>
-
         </>
     )
 }
