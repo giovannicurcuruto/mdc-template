@@ -48,7 +48,6 @@ const CalendarComponent: React.FC<CalendarComponentProps> = ({ events }) => {
         localizer={localizer}
         events={formattedEvents}
         messages={messagesOnCalendar}
-        //formats={formats}
         startAccessor="start"
         endAccessor="end"
         style={{

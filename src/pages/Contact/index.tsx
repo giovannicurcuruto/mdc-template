@@ -15,10 +15,7 @@ export default function ContactPage() {
                 <div>
                     <Formulario />
                 </div>
-
             </Wrapper>
-
-
         </>
     )
 }
