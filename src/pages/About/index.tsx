@@ -11,14 +11,14 @@ import { Sections_1, Sections_2_3, Sections_4 } from "../../types/about/sections
 
 type ApiResponse = {
     success: boolean;
-    data: 
-      {
+    data:
+    {
         section1: Sections_1[];
         section2: Sections_2_3[];
         section3: Sections_2_3[];
         section4: Sections_4[];
-      };    
-  };
+    };
+};
 
 export default function AboutPage() {
     const [sections1, setSections1] = useState<Sections_1[]>([]);
@@ -26,6 +26,7 @@ export default function AboutPage() {
     const [sections3, setSections3] = useState<Sections_2_3[]>([]);
     const [sections4, setSections4] = useState<Sections_4[]>([]);
 
+    
 
     useEffect(() => {
         const fetchData = async () => {
@@ -38,63 +39,69 @@ export default function AboutPage() {
                         }
                     }
                 );
-                console.log(response.data.data)
+                //console.log(response.data.data)
                 if (response.data.success) {
                     const sectionsData = response.data.data;
                     setSections1(sectionsData.section1);
                     setSections2(sectionsData.section2);
                     setSections3(sectionsData.section3);
-                    setSections4(sectionsData.section4);
-                    
+                    setSections4(sectionsData.section4);                    
+
                 } else {
                     console.error("Erro ao carregar os dados da API");
                 }
             } catch (error) {
-                console.error("Erro ao fazer a requisição:", error);
+                if (axios.isAxiosError(error)) {
+                    console.error("Erro Axios:", error.response?.data || error.message);
+                } else {
+                    console.error("Erro inesperado:", error);
+                }
             }
         };
-
+        
         fetchData();
     }, []);
-    console.log(sections2[0].foto);
+    console.log(sections1[0]);
+    //const titulo = sections1[0].titulo;
+    
 
-    const img1 = `${AuthDataInfo.URL}/${sections2[0].foto}`;
-    const img2 = `${AuthDataInfo.URL}/${sections3[0].foto}`;
-    const banner = `${AuthDataInfo.URL}/${sections4[0].banner}`;
+    const img1 = `${AuthDataInfo.URL}/${sections2[0]?.foto}`;
+    const img2 = `${AuthDataInfo.URL}/${sections3[0]?.foto}`;
+    const banner = `${AuthDataInfo.URL}/${sections4[0]?.banner}`;
     return (
         <>
             <Main>
                 <BannerEncontre />
                 <AboutContent>
-                    <h1>{sections1[0].titulo}</h1>
+                    <h1>{sections1[0]?.titulo}</h1>
                     <p>
-                        {sections1[0].texto}
+                        {sections1[0]?.texto}
                     </p>
                     <hr />
 
                     <SepareteComponent />
 
-                    <ImageTextRight 
-                        foto={img1} 
-                        titulo={sections2[0].titulo} 
-                        texto={sections2[0].texto} />
+                    <ImageTextRight
+                        foto={img1}
+                        titulo={sections2[0]?.titulo}
+                        texto={sections2[0]?.texto} />
                     <hr />
                     <SepareteComponent />
                     <hr />
 
-                    <ImageText 
-                        foto={img2} 
-                        titulo={sections3[0].titulo} 
-                        texto={sections3[0].texto} />
+                    <ImageText
+                        foto={img2}
+                        titulo={sections3[0]?.titulo}
+                        texto={sections3[0]?.texto} />
 
                     <hr />
                     <SepareteComponent />
                     <hr />
 
-                    <ImageTextLandscape 
+                    <ImageTextLandscape
                         banner={banner}
-                        titulo={sections4[0].titulo}
-                        texto={sections4[0].texto} />
+                        titulo={sections4[0]?.titulo}
+                        texto={sections4[0]?.texto} />
                 </AboutContent>
 
             </Main>
