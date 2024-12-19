@@ -57,20 +57,29 @@ export default function OurSchedulePage() {
 
         fetchData();
     }, []);
-
-    //console.log(calendario);
-    console.log(sections);
+    
+    console.log(sections[0]);
+    console.log(sections[1]);
+    const img_1 = `https://flowchurch.pedidostec.com.br/${sections[0].foto}`;
+    const img_2 = `https://flowchurch.pedidostec.com.br/${sections[0].foto}`;
 
 
     return (
         <>
             <BannerEncontre />
             <Wrapper>
-                <ImageText />
-                <ImageTextRight />
+                <ImageText 
+                    foto={img_1} 
+                    titulo={sections[0].titulo} 
+                    texto={sections[0].texto} />
+                <ImageTextRight 
+                    foto={img_2} 
+                    titulo={sections[1].titulo} 
+                    texto={sections[1].texto} />
                 <br />
                 <ContainerCalendar>
-                    <CalendarComponent events={calendario} />
+                    <CalendarComponent 
+                        events={calendario} />
                 </ContainerCalendar>
             </Wrapper>
         </>

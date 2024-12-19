@@ -1,18 +1,20 @@
 import { BgBox, Button, ImageTextContainer, ImgBox, ImgContent, TextContent } from "./style";
-import Img01 from '../../assets/img01.jpg';
+//import Img01 from '../../assets/img01.jpg';
 
+interface ImageTextRightProps{
+    foto: string,
+    titulo: string,
+    texto: string
+}
 
-export default function ImageTextRight() {
+export default function ImageTextRight(props : ImageTextRightProps) {
     return (
         <>
             <ImageTextContainer>
                 <TextContent>
-                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
+                    <h2>{props.titulo}</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure nobis
-                        officia totam quos qui illum praesentium saepe! Eius aperiam quaerat
-                        quibusdam iste dolorum blanditiis similique, quisquam amet,
-                        consequatur laboriosam minima.
+                        {props.texto}
                     </p>
                     <Button type="button">Saiba Mais</Button>
                 </TextContent>
@@ -20,7 +22,7 @@ export default function ImageTextRight() {
                     <BgBox />
                     <ImgBox
                         alt="Foto Pastor Junior e Victoria Batista"
-                        src={Img01} // Substitua pelo caminho da imagem
+                        src={props.foto} // Substitua pelo caminho da imagem
                     />
                 </ImgContent>
             </ImageTextContainer>
