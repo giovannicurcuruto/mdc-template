@@ -371,5 +371,32 @@ class SiteService
         ];
     }
     
+    public static function getLocalizacaoItens(){
+        //localizacao_igrejas
+        
+               $conn = TTransaction::open(self::DATABASE);
+        
+        $local = localizacao_igrejas::where('pastores', 'IS NOT', NULL)->load();
+        
+        $localArray = [];
+    
+        
+        if($local)
+        {
+            foreach($local as $x)
+            {
+                $localArray[] = $x->toArray();
+            }
+        }
+        
+        TTransaction::close();
+        
+        return $localArray;
+    
+        
+        
+        
+    }
+    
 }
 
