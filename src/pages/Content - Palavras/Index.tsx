@@ -1,6 +1,6 @@
 // interface VideosContentProps {
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FormContainer, GridCard, GridContainer, ImgCard, ResumeCard, SearchButton, SearchInput } from "./style";
 import { videos } from "../../types/content/sermao";
 import { series } from "../../types/content/series";
@@ -20,10 +20,7 @@ type ApiResponse = {
             biblico: biblico[];
         }
     ]
-
 };
-
-
 
 export default function VideosContent() {
     const [searchQuery, setSearchQuery] = useState<string>("");
@@ -33,66 +30,55 @@ export default function VideosContent() {
     const [devocional, setDevocional] = useState<devocional[]>([]);
     const [biblico, setBiblico] = useState<biblico[]>([]);
 
-    const [filteredSeries, setFilteredSeries] = useState<series[]>([]);
-    const [filteredSermao, setFilteredSermao] = useState<videos[]>([]);
 
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get<ApiResponse>(
-                    AuthDataInfo.URL + "rest.php?class=SiteService&method=getContentPageItens",
-                    {
-                        headers: {
-                            Authorization: AuthDataInfo.TOKEN,
-                        }
+    const fetchContent = async () => {
+        try {
+            const response = await axios.get<ApiResponse>(
+                AuthDataInfo.URL + "rest.php?class=SiteService&method=getContentPageItens",
+                {
+                    headers: {
+                        Authorization: AuthDataInfo.TOKEN,
                     }
-                );
-                //const teste = "videos";
-                //console.log(response.data.data[1]);
-                if (response.data.success) {
-                    const seriesResponse = response.data.data[0]['series'];
-                    const videoResponse = response.data.data[0]['videos'];
-                    const devoResponse = response.data.data[1]['devocional'];
-                    const biblicoResponse = response.data.data[1]['biblico'];
-
-                    setSeries(seriesResponse);
-                    setSermao(videoResponse);
-                    setDevocional(devoResponse);
-                    setBiblico(biblicoResponse);
-
-
-
-
-
-                } else {
-                    console.error("Erro ao carregar os dados da API");
                 }
-            } catch (error) {
-                if (axios.isAxiosError(error)) {
-                    console.error("Erro Axios:", error.response?.data || error.message);
-                } else {
-                    console.error("Erro inesperado:", error);
-                }
+            );
+
+            if (response.data.success) {
+                const seriesResponse = response.data.data[0]['series'];
+                //const videoResponse = response.data.data[0]['videos'];
+                const devoResponse = response.data.data[1]['devocional'];
+                const biblicoResponse = response.data.data[1]['biblico'];
+
+
+                const searchFilter = (item: { resumo?: string; titulo?: string; pastor?: string }) => {
+                    const query = searchQuery.trim().toLowerCase(); // Remover espaços e normalizar a consulta
+                    const fields = [item.resumo, item.titulo, item.pastor]; // Agrupar os campos a serem verificados
+
+                    // Depuração: Logar os campos analisados
+                    console.log("Analisando item:", fields);
+
+                    // Verificar se algum campo inclui a query
+                    return fields.some((field) =>
+                        field?.trim().toLowerCase().includes(query) // Remover espaços e normalizar os campos
+                    );
+                };
+
+                // Filtro aplicado
+                const testResponse = response.data.data[0]["videos"].filter(searchFilter);
+
+
+                setSeries(seriesResponse);
+                setSermao(testResponse);
+                setDevocional(devoResponse);
+                setBiblico(biblicoResponse);
             }
-        };
-
-        fetchData();
-    }, []);
-    /*
-        console.log(series);
-        console.log(devocional);
-        console.log(biblico);
-        console.log(series[0]?.name_video);
-        console.log(series[0]?.pastor);
-        console.log(series[0]?.resumo)
-    
-    
-    
-        console.log(sermao[0]?.name_video);
-        console.log(sermao[0]?.pastor);
-        console.log(sermao[0]?.resumo);
-    */
+        } catch (err) {
+            if (axios.isAxiosError(err)) {
+                console.error("Erro Axios:", err.response?.data || err.message);
+            } else {
+                console.error("Erro inesperado:", err);
+            }
+        }
+    }
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchQuery(e.target.value);
@@ -100,24 +86,12 @@ export default function VideosContent() {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        fetchContent();
         alert("Pesquisa enviada!");
+    }
 
-        const filteredSeries = series?.filter((item) =>
-            item.name_video.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.pastor.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.resumo.toLowerCase().includes(searchQuery.toLowerCase())
-        );
+    console.log(sermao);
 
-        const filteredSermao = sermao?.filter((item) =>
-            item.name_video.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.pastor.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.resumo.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-
-        // Exibe os resultados filtrados
-        console.log(filteredSeries);
-        console.log(filteredSermao);
-    };
     return (
         <>
             <FormContainer onSubmit={handleSubmit}>
@@ -138,19 +112,8 @@ export default function VideosContent() {
                         <p>{item.pastor}</p>
                     </GridCard>
                 ))}
-                {series.map((item, index) => (
-                    <GridCard key={index}>
-                        <ImgCard></ImgCard>
-                        <ResumeCard>{item.resumo}</ResumeCard>
-                        <h3>{item.name_video}</h3>
-                        <p>{item.pastor}</p>
-                    </GridCard>
-                ))}
-
-
 
             </GridContainer>
-
 
         </>
     )
