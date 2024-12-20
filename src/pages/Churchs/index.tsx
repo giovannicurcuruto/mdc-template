@@ -73,12 +73,8 @@ export default function ChurchsPage() {
                         />
                     ))}
 
-
                 </GridSection>
-
-
-
-
+                
             </AboutContent>
 
         </>

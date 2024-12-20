@@ -71,7 +71,7 @@ export default function AboutPage() {
     return (
         <>
             <Main>
-                <BannerEncontre />
+                <BannerEncontre banner={""} />
                 <AboutContent>
                     <h1>{sections1[0]?.titulo}</h1>
                     <p>

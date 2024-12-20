@@ -1,5 +1,5 @@
 import { BannerSecondary, BgBox, CardContainer, ImgPastors, LastGrid, Pastors, PastorsImgContent, PastorsText } from "./styles";
-import foto_patores from "../../assets/pastors.jpg";
+//import foto_patores from "../../assets/pastors.jpg";
 import ImageText from "../../components/ImageText";
 import { BannerEncontre, BannerHome, BannerSlider } from "../../components/Banners";
 import CardsComponents from "../../components/Cards";
@@ -35,7 +35,7 @@ type ApiResponse = {
 
 export default function HomePage() {
     const [cards, setCards] = useState<Cards[]>([]);
-    const [banner, setBanner] = useState<Banner[]>([]);
+    const [, setBanner] = useState<Banner[]>([]);
     const [carousel, setCarousel] = useState<Carousel[]>([]);
     const [sections, setSections] = useState<Sections[]>([]);
     
