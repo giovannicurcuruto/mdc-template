@@ -51,12 +51,13 @@ export default function ChurchsPage() {
     }, []);
     console.log(locale.length);
     
+    
 
 
 
     return (
         <>
-            <BannerEncontre />
+            <BannerEncontre banner={""} />
             <AboutContent>
                 <h1>Encontre uma igreja mais proxima de você</h1>
                 <h4>Encontre a Mais de Cristo mais perto de você</h4>
@@ -67,7 +68,8 @@ export default function ChurchsPage() {
                             name={church.pastores}
                             address={church.endereco}
                             city={church.cidade}
-                            cults={church.cultos}
+                            cults={church.cultos} 
+                            image={church.imagem}                            
                         />
                     ))}
 

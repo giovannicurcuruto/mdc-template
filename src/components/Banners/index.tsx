@@ -4,9 +4,29 @@ import img_banner_semanal from '../../assets/banner_01.jpg';
 import img_banner_church from '../../assets/church.jpg';
 import logo_banner from '../../assets/logo2.png';
 import Slider from "react-slick";
+import { Carousel } from "../../types/home/carousel";
+import { AuthDataInfo } from "../../utils/auth";
 
+interface BannerEncontreProps{
+    banner: string;
+}
 
-export function BannerEncontre() {
+interface BannerSemanalProps{
+    banner: string;
+}
+
+interface BannerHomeProps{
+    banner: string;
+}
+
+interface BannerImgBannerProps{
+    banner: string;
+}
+
+interface BannerSliderProps{
+    banners: Carousel[]
+}
+export function BannerEncontre(props: BannerEncontreProps) {
     return (
         <>
             <BannerImage
@@ -17,7 +37,7 @@ export function BannerEncontre() {
     )
 }
 
-export function BannerSemanal() {
+export function BannerSemanal(props: BannerSemanalProps) {
 
     return (
         <>
@@ -28,7 +48,7 @@ export function BannerSemanal() {
     )
 }
 
-export function BannerHome() {
+export function BannerHome(props: BannerHomeProps) {
     return (
         <>
             <BannerBackground
@@ -46,7 +66,7 @@ export function BannerHome() {
     )
 }
 
-export function BannerImgBanner() {
+export function BannerImgBanner(props: BannerImgBannerProps) {
     return (
         <>
             <BannerImage
@@ -57,7 +77,7 @@ export function BannerImgBanner() {
     )
 }
 
-export function BannerSlider() {
+export function BannerSlider(props: BannerSliderProps) {
     const settings = {
         dots: true,
         infinite: true,
@@ -73,22 +93,19 @@ export function BannerSlider() {
         <div className="slider-container">
             <Slider {...settings}>
                 <div>
-                    <img src={img_banner_semanal} alt="Agenda semanal" />
+                    <img src={`${AuthDataInfo.URL}${props.banners[0]?.banner_carousel}`} alt="Agenda semanal" />
                 </div>
                 <div>
-                    <img src={img_banner_semanal} alt="Agenda semanal" />
+                    <img src={`${AuthDataInfo.URL}${props.banners[1]?.banner_carousel}`} alt="Agenda semanal" />
                 </div>
                 <div>
-                    <img src={img_banner_semanal} alt="Agenda semanal" />
+                    <img src={`${AuthDataInfo.URL}${props.banners[2]?.banner_carousel}`} alt="Agenda semanal" />
                 </div>
                 <div>
-                    <img src={img_banner_semanal} alt="Agenda semanal" />
+                    <img src={`${AuthDataInfo.URL}${props.banners[3]?.banner_carousel}`} alt="Agenda semanal" />
                 </div>
                 <div>
-                    <img src={img_banner_semanal} alt="Agenda semanal" />
-                </div>
-                <div>
-                    <img src={img_banner_semanal} alt="Agenda semanal" />
+                    <img src={`${AuthDataInfo.URL}${props.banners[4]?.banner_carousel}`} alt="Agenda semanal" />
                 </div>
             </Slider>
         </div>
