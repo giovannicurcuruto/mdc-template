@@ -26,9 +26,9 @@ export default function VideosContent() {
     const [searchQuery, setSearchQuery] = useState<string>("");
 
     const [sermao, setSermao] = useState<videos[]>([]);
-    const [series, setSeries] = useState<series[]>([]);
-    const [devocional, setDevocional] = useState<devocional[]>([]);
-    const [biblico, setBiblico] = useState<biblico[]>([]);
+    const [, setSeries] = useState<series[]>([]);
+    const [, setDevocional] = useState<devocional[]>([]);
+    const [, setBiblico] = useState<biblico[]>([]);
 
 
     const fetchContent = async () => {
