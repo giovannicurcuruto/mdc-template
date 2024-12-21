@@ -29,7 +29,7 @@ export const TextLandscape = styled.div`
     font-size: 2rem;
     font-weight: 600;
     padding-bottom: 1rem;
-    color: var(--mc-grey-strong);
+    color: var(--mc-grey-text);
   }
 
   p {

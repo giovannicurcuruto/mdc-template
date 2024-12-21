@@ -11,17 +11,18 @@ export const AboutContent = styled.section`
   margin: auto;
   display: grid;
   place-items: center;
+  color: var(--mc-grey-text);
 
   h1 {
     font-size: 2.7rem;
     padding-bottom: 1rem;
-    color: var(--mc-grey-light);
+    color: var(--mc-grey-text);
   }
 
   p {
     font-size: 1.5rem;
     width: 80%;
-    color: var(--mc-grey-light);
+    color: var(--mc-grey-text);
     margin: auto; /* Centraliza o texto caso necessário */
   }
 

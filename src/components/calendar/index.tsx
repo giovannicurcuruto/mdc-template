@@ -42,7 +42,8 @@ const CalendarComponent: React.FC<CalendarComponentProps> = ({ events }) => {
     <div style={{
       maxWidth: `var(--max-width)`,
       width: 'var(--max-width)',
-      height: '500px'
+      height: '500px',
+      color: '#000'
     }}>
       <Calendar
         localizer={localizer}

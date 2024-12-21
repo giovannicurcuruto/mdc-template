@@ -14,11 +14,12 @@ export const ImgContent = styled.div`
 
 export const BgBox = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2); /* Fundo escuro translúcido */
+  right: 5.2rem;
+  bottom: -0.9rem;
+  clip-path: polygon(0% 50%, 50% 100%, 0% 100%);
+  width: 500px;
+  height:500px;
+  background-color: var(--primary-color);
   z-index: -1;
 `;
 
@@ -41,7 +42,7 @@ export const TextContent = styled.div`
 
   p {
     font-size: 1rem;
-    color: #666;
+    color: var(--mc-grey-text);
     margin-bottom: 1.5rem;
   }
 `;

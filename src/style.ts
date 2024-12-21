@@ -28,6 +28,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: #202020;
     font-family: 'Montserrat', sans-serif;
+    color: var(--mc-grey-text);
   }
 
   li {

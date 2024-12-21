@@ -27,7 +27,7 @@ export const CardText = styled.div`
 
   p {
     padding-top: 1rem;
-    color: var(--mc-grey-light);
+    color: var(--mc-grey-strong);
   }
 `;
 

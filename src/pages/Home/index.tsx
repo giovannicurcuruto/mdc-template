@@ -94,7 +94,7 @@ export default function HomePage() {
                 <BannerHome banner={""} />
                 <Pastors>
                     <PastorsImgContent>
-                        <BgBox></BgBox>
+                        <BgBox/>
                         <ImgPastors
                             alt="Foto Pastor Junior e Victoria Batista"
                             src={`${AuthDataInfo.URL}${sections[0]?.foto_s1}`}

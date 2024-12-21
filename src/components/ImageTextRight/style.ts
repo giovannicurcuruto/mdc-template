@@ -14,23 +14,21 @@ export const TextContent = styled.div`
   width: 50%;
   padding-left: 3rem;
   display: grid;
-  place-items: center;
-  
+  place-items: center; 
 
   h2 {
     font-size: 1.6rem;
     font-weight: 600;
-    color: var(--mc-grey-strong);
+    color: var(--mc-grey-text);
     padding-bottom: 2rem;
   }
 
   p {
     font-size: 1rem;
     font-weight: 400;
-    color: var(--mc-grey-light);
+    color: var(--mc-grey-text);
     margin-bottom: 3rem;
-  }
- 
+  } 
 
 `;
 

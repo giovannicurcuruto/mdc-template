@@ -37,7 +37,7 @@ export const PastorsImgContent = styled.div`
 export const BgBox = styled.div`
   position: absolute;
   right: -1rem;
-  bottom: 3.3rem;
+  bottom: -1rem;
   width: 500px;
   height: 500px;
   background-color: var(--primary-color);
@@ -54,6 +54,7 @@ export const BgBox = styled.div`
 export const ImgPastors = styled.img`
   width: 100%;
   object-fit: contain;
+  height: auto;
 `;
 
 export const PastorsText = styled.div`
@@ -63,14 +64,14 @@ export const PastorsText = styled.div`
   h2 {
     font-size: 1.6rem;
     font-weight: 600;
-    color: var(--mc-grey-strong);
+    color: var(--mc-grey-text);
     padding-bottom: 2rem;
   }
 
   p {
     font-size: 1rem;
     font-weight: 400;
-    color: var(--mc-grey-light);
+    color: var(--mc-grey-text);
     margin-bottom: 3rem;
   }
 
