@@ -1,20 +1,29 @@
 import React, { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import styled from 'styled-components';
 import favicon from '../../assets/favicon.png';
 import { locations } from './location';
 
+// Styled component para o mapa
+const StyledMapContainer = styled.div`
+  height: 500px;
+  width: 500px;
+
+  @media (max-width: 768px) {
+    height: 300px; /* Altura menor para dispositivos móveis */
+    width: 100%; /* Ajusta a largura para caber na tela */
+  }
+`;
+
 const MapComponent: React.FC = () => {
   const mapRef = useRef<HTMLDivElement | null>(null);
-  const leafletMap = useRef<L.Map | null>(null);  // Ajuste do tipo
-
-  
+  const leafletMap = useRef<L.Map | null>(null);
 
   useEffect(() => {
     if (mapRef.current) {
-      // Se leafletMap.current não for inicializado, cria o mapa
       if (!leafletMap.current) {
-        leafletMap.current = L.map(mapRef.current).setView([-27.590746, -48.554424], 7); // Centraliza o mapa em Florianópolis
+        leafletMap.current = L.map(mapRef.current).setView([-27.590746, -48.554424], 7);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: '&copy; OpenStreetMap contributors',
@@ -22,17 +31,15 @@ const MapComponent: React.FC = () => {
       }
 
       const customIcon = L.icon({
-        iconUrl: favicon, // URL para a imagem do ícone
-        iconSize: [32, 32], // Tamanho do ícone
-        iconAnchor: [16, 32], // Ponto do ícone que ficará ancorado no local do marcador
-        popupAnchor: [0, -32], // Ajusta o ponto de ancoragem do popup
+        iconUrl: favicon,
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32],
       });
 
-
-      // Adiciona os marcadores para cada localização
       locations.forEach(location => {
         if (leafletMap.current) {
-          L.marker([location.lat, location.lng], {icon: customIcon})
+          L.marker([location.lat, location.lng], { icon: customIcon })
             .addTo(leafletMap.current)
             .bindPopup(`
               <b>${location.name}</b><br />
@@ -51,7 +58,7 @@ const MapComponent: React.FC = () => {
     };
   }, []);
 
-  return <div ref={mapRef} style={{ height: '500px', width: '500px' }} />;
+  return <StyledMapContainer ref={mapRef} />;
 };
 
 export default MapComponent;

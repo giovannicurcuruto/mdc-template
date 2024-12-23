@@ -106,7 +106,7 @@ export default function BiblicoContent() {
             <GridContainer>
                 {biblico.map((item, index) => (
                     <GridCard key={index}>
-                        <ImgCard></ImgCard>
+                        <ImgCard src={`${AuthDataInfo.URL}${item.foto}`}></ImgCard>
                         <ResumeCard>{item.resumo}</ResumeCard>
                         <h3>{item.titulo}</h3>
                         <p>{item.resumo}</p>

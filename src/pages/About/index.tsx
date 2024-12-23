@@ -24,9 +24,7 @@ export default function AboutPage() {
     const [sections1, setSections1] = useState<Sections_1[]>([]);
     const [sections2, setSections2] = useState<Sections_2_3[]>([]);
     const [sections3, setSections3] = useState<Sections_2_3[]>([]);
-    const [sections4, setSections4] = useState<Sections_4[]>([]);
-
-    
+    const [sections4, setSections4] = useState<Sections_4[]>([]);    
 
     useEffect(() => {
         const fetchData = async () => {

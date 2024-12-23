@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const BannerMain = styled.div`
   width: 100%;
@@ -22,6 +22,7 @@ export const Pastors = styled.div`
   @media (max-width: 700px) {
     flex-direction: column;
     padding: 2rem 1rem;
+    align-items: flex-start;
   }
 `;
 
@@ -47,7 +48,8 @@ export const BgBox = styled.div`
   @media (max-width: 700px) {
     width: 300px;
     height: 300px;
-    bottom: 1.5rem;
+
+    right: 1;
   }
 `;
 
@@ -77,7 +79,7 @@ export const PastorsText = styled.div`
 
   @media (max-width: 700px) {
     width: 100%;
-    padding-left: 1rem;
+    padding-left: 0;
 
     h2 {
       font-size: 1.4rem;
@@ -110,20 +112,25 @@ export const CardContainer = styled.div`
   max-width: var(--max-width);
   margin: auto;
   padding: 6rem 0;
-  display: flex;
 
-  @media (min-width: 701px) and (max-width: 1120px) {
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
+  /* Aplicando Grid no Desktop */
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* 1fr ajustável */
+  gap: 2rem;
 
+  /* Ajustes para Mobile */
   @media (max-width: 700px) {
-    padding: 4rem 1rem;
+    display: flex;
     flex-direction: column;
+    padding: 4rem 1rem;
+    gap: 2rem; /* Espaçamento entre os cartões no mobile */
   }
 `;
 
-export const LastGrid = styled.div`  
+export const LastGrid = styled.div`
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2rem 0;

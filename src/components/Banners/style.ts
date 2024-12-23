@@ -1,9 +1,17 @@
 import styled from 'styled-components';
 
 export const BannerImage = styled.img`
-  width: calc(100vw - 17px);
+  /* width: calc(100vw - 17px);
+  height: 80vh;
+  object-fit: cover; */
+  width: 100%;
   height: 80vh;
   object-fit: cover;
+
+  @media (max-width: 700px) {
+    height: 50vh; /* Altura menor no mobile */
+  }
+
 `;
 
 export const BannerSecondary = styled.div`

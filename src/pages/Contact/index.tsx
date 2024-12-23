@@ -1,21 +1,20 @@
 import { BannerEncontre } from "../../components/Banners";
 import Formulario from "../../components/Forms";
 import MapComponent from "../../components/Leaflet";
-//import Maps from "../../components/Maps";
 import { Wrapper } from "./style";
 
 export default function ContactPage() {
     return (
         <>
-            <BannerEncontre />
+            <BannerEncontre banner={""} />
             <Wrapper>
-                <div>
-                    <MapComponent />
-                </div>
-                <div>
+                <div className="formulario">
                     <Formulario />
+                </div>
+                <div className="mapa">
+                    <MapComponent />
                 </div>
             </Wrapper>
         </>
-    )
+    );
 }
