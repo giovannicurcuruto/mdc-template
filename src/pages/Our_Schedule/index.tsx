@@ -66,7 +66,7 @@ export default function OurSchedulePage() {
 
     return (
         <>
-            <BannerEncontre banner={""} />
+            <BannerEncontre  />
             <Wrapper>
                 <ImageText 
                     foto={img_1} 

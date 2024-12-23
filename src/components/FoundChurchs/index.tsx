@@ -1,5 +1,5 @@
 import { Card, CardContent, CardText, CardTitle, ContainerChurchs, ImageWrapper } from "./style";
-import img from '../../assets/24.jpg';
+//import img from '../../assets/24.jpg';
 import { AuthDataInfo } from "../../utils/auth";
 
 interface FoundChurchsProps {

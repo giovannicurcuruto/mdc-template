@@ -6,7 +6,7 @@ import { Wrapper } from "./style";
 export default function ContactPage() {
     return (
         <>
-            <BannerEncontre banner={""} />
+            <BannerEncontre  />
             <Wrapper>
                 <div className="formulario">
                     <Formulario />

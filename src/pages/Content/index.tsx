@@ -17,7 +17,7 @@ export default function ContentPage() {
     return (
         <>
             <Main>
-                <BannerEncontre banner={""} />
+                <BannerEncontre  />
                 <AboutContent>
                     <h1>Selecione o conteúdo que deseja visualizar</h1>
                     <GridSection>

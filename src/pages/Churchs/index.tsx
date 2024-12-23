@@ -57,7 +57,7 @@ export default function ChurchsPage() {
 
     return (
         <>
-            <BannerEncontre banner={""} />
+            <BannerEncontre  />
             <AboutContent>
                 <h1>Encontre uma igreja mais proxima de você</h1>
                 <h4>Encontre a Mais de Cristo mais perto de você</h4>

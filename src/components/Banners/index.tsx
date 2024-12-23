@@ -7,26 +7,26 @@ import Slider from "react-slick";
 import { Carousel } from "../../types/home/carousel";
 import { AuthDataInfo } from "../../utils/auth";
 
-interface BannerEncontreProps{
-    banner: string;
-}
+// interface BannerEncontreProps{
+//     banner: string;
+// }
 
-interface BannerSemanalProps{
-    banner: string;
-}
+// interface BannerSemanalProps{
+//     banner: string;
+// }
 
-interface BannerHomeProps{
-    banner: string;
-}
+// interface BannerHomeProps{
+//     banner: string;
+// }
 
-interface BannerImgBannerProps{
-    banner: string;
-}
+// interface BannerImgBannerProps{
+//     banner: string;
+// }
 
 interface BannerSliderProps{
     banners: Carousel[]
 }
-export function BannerEncontre(props: BannerEncontreProps) {
+export function BannerEncontre() {
     return (
         <>
             <BannerImage
@@ -37,7 +37,7 @@ export function BannerEncontre(props: BannerEncontreProps) {
     )
 }
 
-export function BannerSemanal(props: BannerSemanalProps) {
+export function BannerSemanal() {
 
     return (
         <>
@@ -48,7 +48,7 @@ export function BannerSemanal(props: BannerSemanalProps) {
     )
 }
 
-export function BannerHome(props: BannerHomeProps) {
+export function BannerHome() {
     return (
         <>
             <BannerBackground
@@ -66,7 +66,7 @@ export function BannerHome(props: BannerHomeProps) {
     )
 }
 
-export function BannerImgBanner(props: BannerImgBannerProps) {
+export function BannerImgBanner() {
     return (
         <>
             <BannerImage

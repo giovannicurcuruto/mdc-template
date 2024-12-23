@@ -91,7 +91,7 @@ export default function HomePage() {
     return (
         <>
             <section>
-                <BannerHome banner={""} />
+                <BannerHome  />
                 <Pastors>
                     <PastorsImgContent>
                         <BgBox/>
@@ -127,7 +127,7 @@ export default function HomePage() {
                 </CardContainer>
 
                 <section>
-                    <BannerEncontre banner={""} />
+                    <BannerEncontre />
                 </section>
                 <LastGrid>
                     <ImageText 
