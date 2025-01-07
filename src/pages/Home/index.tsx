@@ -1,4 +1,4 @@
-import { BannerSecondary, BarraFixa, BgBox, CardContainer, ImgPastors, LastGrid, Pastors, PastorsImgContent, PastorsText, Reveal } from "./styles";
+import { BannerSecondary,  BgBox, CardContainer, ImgPastors, LastGrid, Pastors, PastorsImgContent, PastorsText, Reveal } from "./styles";
 //import foto_patores from "../../assets/pastors.jpg";
 import ImageText from "../../components/ImageText";
 import { BannerEncontre, BannerHome, BannerSlider } from "../../components/Banners";
@@ -93,7 +93,11 @@ export default function HomePage() {
 
         sr.reveal(".reveal", {
             interval: 200,
-            beforeReveal: (el) => el.classList.add("is-visible"),
+            beforeReveal: (el) => {
+                if (el instanceof HTMLElement) {
+                    el.classList.add("is-visible");
+                }
+            },
             //beforeReset: (el) => el.classList.remove("is-visible"),
         });
     }, []);
@@ -162,7 +166,7 @@ export default function HomePage() {
 
             </section>
             
-            <BarraFixa>Seja Bem vindo a Mais de Cristo! </BarraFixa>
+            {/* <BarraFixa>Seja Bem vindo a Mais de Cristo! </BarraFixa> */}
         </>
     )
 }
