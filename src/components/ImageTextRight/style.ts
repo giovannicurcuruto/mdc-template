@@ -23,17 +23,23 @@ export const TextContent = styled.div`
   place-items: center;
 
   h2 {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 600;
+    
     color: var(--mc-grey-text);
     padding-bottom: 2rem;
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
+    font-style: justify;
     color: var(--mc-grey-text);
     margin-bottom: 3rem;
+  }
+
+  button {
+    padding-top: 10px;
   }
 
   @media (max-width: 700px) {

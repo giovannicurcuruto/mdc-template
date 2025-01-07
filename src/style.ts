@@ -51,17 +51,17 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: 2px 2px 3px 1px var(--mc-grey-light);
   }
 
-  @media (max-width: 1080px) {
-    html {
-      font-size: 93.75%; /* vai gerar uns 15px */
-    }
-  }
+ // @media (max-width: 1080px) {
+  //  html {
+ //     font-size: 93.75%; /* vai gerar uns 15px */
+ //   }
+ // }
 
-  @media (max-width: 720px) {
-    html {
-      font-size: 87.5%; /* vai gerar uns 14px */
-    }
-  }
+//  @media (max-width: 720px) {
+//    html {
+//      font-size: 87.5%; /* vai gerar uns 14px */
+//    }
+//  }
 `;
 
 export const BannerSecondary = styled.div`

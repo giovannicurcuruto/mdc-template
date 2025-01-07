@@ -5,7 +5,7 @@ import { series } from "../../types/content/series";
 import { videos } from "../../types/content/sermao";
 import axios from "axios";
 import { AuthDataInfo } from "../../utils/auth";
-import { FormContainer, GridCard, GridContainer, ImgCard, ResumeCard, SearchButton, SearchInput } from "./style";
+import { CliqueMe, CloseButton, FormContainer, GridCard, GridContainer, ImgCard, Modal, ModalContent, SearchButton, SearchInput } from "./style";
 
 type ApiResponse = {
     success: boolean;
@@ -19,6 +19,7 @@ type ApiResponse = {
         }
     ]
 };
+
 export default function DevocionaisContent() {
     const [searchQuery, setSearchQuery] = useState<string>("");
 
@@ -26,6 +27,8 @@ export default function DevocionaisContent() {
     const [, setSeries] = useState<series[]>([]);
     const [devocional, setDevocional] = useState<devocional[]>([]);
     const [, setBiblico] = useState<biblico[]>([]);
+
+    const [selectedItem, setSelectedItem] = useState<biblico | null>(null); // Estado para o item selecionado
 
     const fetchContent = async () => {
         try {
@@ -86,7 +89,14 @@ export default function DevocionaisContent() {
         alert("Pesquisa enviada!");
     }
 
-    console.log(devocional);
+    const handleItemClick = (item: biblico) => {
+        setSelectedItem(item); // Definir o item selecionado para abrir o modal
+    };
+
+    const handleCloseModal = () => {
+        setSelectedItem(null); // Fechar o modal
+    };
+
 
     return (
         <>
@@ -102,14 +112,27 @@ export default function DevocionaisContent() {
             <GridContainer>
                 {devocional.map((item, index) => (
                     <GridCard key={index}>
-                        <ImgCard></ImgCard>
-                        <ResumeCard>{item.resumo}</ResumeCard>
+                        <ImgCard src={`${AuthDataInfo.URL}${item.foto}`}></ImgCard>
                         <h3>{item.titulo}</h3>
                         <p>{item.resumo}</p>
+                        <CliqueMe href="#" onClick={() => handleItemClick(item)}>
+                            Clique aqui para ler mais!
+                        </CliqueMe>
                     </GridCard>
                 ))}
 
             </GridContainer>
+
+            {selectedItem && (
+                <Modal>
+                    <ModalContent>
+                        <CloseButton onClick={handleCloseModal}>×</CloseButton>
+                        <ImgCard src={`${AuthDataInfo.URL}${selectedItem.foto}`} />
+                        <h3>{selectedItem.titulo}</h3>
+                        <p>{selectedItem.texto}</p>
+                    </ModalContent>
+                </Modal>
+            )}
 
         </>
     )

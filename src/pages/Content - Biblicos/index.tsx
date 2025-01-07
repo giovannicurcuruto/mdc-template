@@ -5,7 +5,7 @@ import { series } from "../../types/content/series";
 import { videos } from "../../types/content/sermao";
 import axios from "axios";
 import { AuthDataInfo } from "../../utils/auth";
-import { FormContainer, GridCard, GridContainer, ImgCard, ResumeCard, SearchButton, SearchInput } from "./style";
+import { CliqueMe, CloseButton, FormContainer, GridCard, GridContainer, ImgCard, Modal, ModalContent,  SearchButton, SearchInput } from "./style";
 
 type ApiResponse = {
     success: boolean;
@@ -30,6 +30,8 @@ export default function BiblicoContent() {
     const [, setDevocional] = useState<devocional[]>([]);
     const [biblico, setBiblico] = useState<biblico[]>([]);
 
+    const [selectedItem, setSelectedItem] = useState<biblico | null>(null); // Estado para o item selecionado
+    
     const fetchContent = async () => {
         try {
             const response = await axios.get<ApiResponse>(
@@ -89,7 +91,13 @@ export default function BiblicoContent() {
         alert("Pesquisa enviada!");
     }
 
-    console.log(biblico);
+    const handleItemClick = (item: biblico) => {
+        setSelectedItem(item); // Definir o item selecionado para abrir o modal
+    };
+
+    const handleCloseModal = () => {
+        setSelectedItem(null); // Fechar o modal
+    };
 
     return (
         <>
@@ -107,14 +115,26 @@ export default function BiblicoContent() {
                 {biblico.map((item, index) => (
                     <GridCard key={index}>
                         <ImgCard src={`${AuthDataInfo.URL}${item.foto}`}></ImgCard>
-                        <ResumeCard>{item.resumo}</ResumeCard>
                         <h3>{item.titulo}</h3>
                         <p>{item.resumo}</p>
+                        <CliqueMe href="#" onClick={() => handleItemClick(item)}>
+                            Clique aqui para ler mais!
+                        </CliqueMe>
                     </GridCard>
                 ))}
 
             </GridContainer>
 
+            {selectedItem && (
+                <Modal>
+                    <ModalContent>
+                        <CloseButton onClick={handleCloseModal}>×</CloseButton>
+                        <ImgCard src={`${AuthDataInfo.URL}${selectedItem.foto}`} />
+                        <h3>{selectedItem.titulo}</h3>
+                        <p>{selectedItem.texto}</p>
+                    </ModalContent>
+                </Modal>
+            )}
 
         </>
     )

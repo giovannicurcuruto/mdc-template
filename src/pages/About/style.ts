@@ -19,16 +19,16 @@ export const AboutContent = styled.section`
     color: var(--mc-grey-text);
   }
 
-  p {
-    font-size: 1.5rem;
-    width: 80%;
-    color: var(--mc-grey-text);
-    margin: auto; /* Centraliza o texto caso necessário */
-  }
+  
 
   > hr {
     margin: 4rem 0;
     border: none;
     border-top: 1px solid var(--mc-divider); /* Adicione uma variável global ou uma cor fixa */
   }
+`;
+
+export const P_custom = styled.p`
+  padding-top: 35px;
+  font-size: 1.8rem;
 `;

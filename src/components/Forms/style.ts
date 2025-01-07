@@ -25,6 +25,7 @@ export const Form = styled.form`
   display: grid;
   grid-template-columns: 1fr; /* grid-cols-1 */
   gap: 1.5rem; /* gap-6 */
+  
 `;
 
 export const Label = styled.label`
@@ -40,6 +41,7 @@ export const Input = styled.input`
   background-color: #f7fafc; /* bg-gray-100 */
   border-radius: 0.5rem; /* rounded-lg */
   outline: none;
+  width: 100%;
   &:focus {
     border-color: #4299e1; /* ring-blue-500 */
     box-shadow: 0 0 0 2px #ebf8ff; /* focus:ring-2 */
@@ -53,6 +55,7 @@ export const Textarea = styled.textarea`
   background-color: #f7fafc; /* bg-gray-100 */
   border-radius: 0.5rem; /* rounded-lg */
   outline: none;
+  width: 100%;
   &:focus {
     border-color: #4299e1; /* ring-blue-500 */
     box-shadow: 0 0 0 2px #ebf8ff; /* focus:ring-2 */
@@ -81,4 +84,10 @@ export const Button = styled.button`
     box-shadow: 0 0 0 2px #ebf8ff; /* focus:ring-2 */
     border-color: #4299e1; /* focus:ring-blue-500 */
   }
+`;
+
+export const GridSuperior = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  place-items: center;
 `;

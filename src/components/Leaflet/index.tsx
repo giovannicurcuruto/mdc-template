@@ -7,9 +7,10 @@ import { locations } from './location';
 
 // Styled component para o mapa
 const StyledMapContainer = styled.div`
-  height: 500px;
-  width: 500px;
-
+  height: 450px;
+  width: 32rem;
+  border-radius: 0.5rem;
+  
   @media (max-width: 768px) {
     height: 300px; /* Altura menor para dispositivos móveis */
     width: 100%; /* Ajusta a largura para caber na tela */

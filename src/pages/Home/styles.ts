@@ -135,3 +135,27 @@ export const LastGrid = styled.div`
   margin: 0 auto;
   padding: 2rem 0;
 `;
+
+export const Reveal = styled.div`
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+`;
+
+export const BarraFixa = styled.div`
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  background-color: red;
+  height: 50px;
+  padding-left: 150px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  z-index:1000;
+  
+
+`;

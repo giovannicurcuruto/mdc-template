@@ -39,10 +39,15 @@ export const BannerHomeSecondary = styled.div`
 
 `;
 
+export const DivSlider = styled.div`
+  padding-top: 123px;
+`;
 
-export const BannerBackground = styled.div`  
+
+export const BannerBackground = styled.div` 
+  
   width: 100%;
-  height: 1000px;  
+  height: 550px;  
   background-size: cover;  
   display:grid;
   grid-template-columns: minmax(350px, 1fr) 2fr ;

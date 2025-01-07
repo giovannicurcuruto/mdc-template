@@ -73,11 +73,12 @@ export const GridContainer = styled.div`
 `;
 
 export const GridCard = styled.div`
-display: grid;
+  display: grid;
   grid-template-rows: auto auto;
   gap: 10px;
   padding-bottom: 50px;
   text-align: center;
+  place-items: center;
 
 
   @media (max-width: 700px) {
@@ -99,7 +100,7 @@ export const ImgCard = styled.img`
 
 
 export const ResumeCard = styled.div`
-background-color: blue;
+
 padding: 10px;
 border-radius: 4px;
 text-align: center;
@@ -110,3 +111,59 @@ color: white;
   font-size: 12px; /* Reduz o tamanho da fonte no mobile */
 }
 `;
+
+export const CliqueMe = styled.a`
+  text-decoration: none;
+  color: var(--primary-color);
+`
+
+export const Modal = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+`;
+
+export const ModalContent = styled.div`
+    background: gray;
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    text-align: center;
+
+    img{
+      padding-top: 50px;
+    }
+
+    h3{
+      padding-top: 25px;
+    }
+    
+    p{
+      padding-top: 25px;
+      margin: 0 auto;
+    }
+`;
+
+export const CloseButton = styled.button`
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;       
+    border-radius: 25px;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #333;
+`;
+

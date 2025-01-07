@@ -26,8 +26,8 @@ export const ImgContent = styled.div`
 
 export const BgBox = styled.div`
   position: absolute;
-  right: 5.2rem;
-  bottom: -0.9rem;
+  right: 2.5rem;
+  bottom: -1rem;
   clip-path: polygon(0% 50%, 50% 100%, 0% 100%);
   width: 500px;
   height: 500px;
@@ -46,6 +46,7 @@ export const ImgBox = styled.img`
   width: 100%;
   height: auto;
   border-radius: 8px;
+  padding-left: 2rem;
 `;
 
 export const TextContent = styled.div`
@@ -55,14 +56,18 @@ export const TextContent = styled.div`
   place-items: center;
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--mc-grey-text);
     margin-bottom: 1.5rem;
+  }
+
+  button {
+    padding-top: 10px;
   }
 
   @media (max-width: 700px) {

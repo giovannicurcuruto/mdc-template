@@ -4,7 +4,7 @@ import ImageText from "../../components/ImageText";
 import ImageTextLandscape from "../../components/ImageTextLandscape";
 import ImageTextRight from "../../components/ImageTextRight";
 import SepareteComponent from "../../components/Separate";
-import { AboutContent, Main } from "./style";
+import { AboutContent, Main, P_custom } from "./style";
 import { AuthDataInfo } from "../../utils/auth";
 import axios from "axios";
 import { Sections_1, Sections_2_3, Sections_4 } from "../../types/about/sections";
@@ -72,9 +72,9 @@ export default function AboutPage() {
                 <BannerEncontre  />
                 <AboutContent>
                     <h1>{sections1[0]?.titulo}</h1>
-                    <p>
+                    <P_custom>
                         {sections1[0]?.texto}
-                    </p>
+                    </P_custom>
                     <hr />
 
                     <SepareteComponent />

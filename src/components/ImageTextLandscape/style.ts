@@ -33,9 +33,10 @@ export const TextLandscape = styled.div`
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
-    color: var(--mc-grey-light);
+    font-style: justify;
+    color: var(--mc-grey-text);
     padding-bottom: 1rem;
     width: 100%;
   }

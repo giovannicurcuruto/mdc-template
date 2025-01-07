@@ -43,7 +43,7 @@ export default function VideosContent() {
     try {
       const response = await axios.get<ApiResponse>(
         AuthDataInfo.URL +
-          "rest.php?class=SiteService&method=getContentPageItens",
+        "rest.php?class=SiteService&method=getContentPageItens",
         {
           headers: {
             Authorization: AuthDataInfo.TOKEN,
@@ -53,7 +53,7 @@ export default function VideosContent() {
 
       if (response.data.success) {
         const seriesResponse = response.data.data[0]["series"];
-        //const videoResponse = response.data.data[0]['videos'];
+
         const devoResponse = response.data.data[1]["devocional"];
         const biblicoResponse = response.data.data[1]["biblico"];
 
@@ -131,7 +131,11 @@ export default function VideosContent() {
           const thumbnail = getYouTubeThumbnail(item.link_video);
 
           return (
-            <GridCard key={index}>
+            <GridCard
+              key={index}
+              onClick={() => window.open(item.link_video, "_blank")} // Abre o link em uma nova aba
+              style={{ cursor: "pointer" }} // Adiciona um cursor para indicar que é clicável
+            >
               {thumbnail ? (
                 <ImgCard src={thumbnail} alt={item.name_video} />
               ) : (

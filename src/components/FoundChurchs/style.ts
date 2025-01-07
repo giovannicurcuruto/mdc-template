@@ -20,6 +20,10 @@ export const ImageWrapper = styled.div`
     height: auto;
     display: block;
   }
+
+  img:hover{
+    opacity: 0.5;
+  }
 `;
 
 export const CardContent = styled.div`
@@ -37,6 +41,9 @@ export const CardTitle = styled.h5`
 export const CardText = styled.p`
   font-size: 1.3rem;
   line-height: 1.5rem;
+  padding-bottom: 5px;
   color: #374151;
+  margin: 0 auto;
+  text-align: justify;
 `;
 

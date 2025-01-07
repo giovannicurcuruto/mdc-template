@@ -50,10 +50,6 @@ export default function ChurchsPage() {
         fetchData();
     }, []);
     console.log(locale.length);
-    
-    
-
-
 
     return (
         <>

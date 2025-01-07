@@ -1,4 +1,4 @@
-import { BannerBackground, BannerImage, BannerSecondary } from "./style";
+import { BannerBackground, BannerImage, BannerSecondary, DivSlider } from "./style";
 import img_banner from '../../assets/banner_04.jpg';
 import img_banner_semanal from '../../assets/banner_01.jpg';
 import img_banner_church from '../../assets/church.jpg';
@@ -7,23 +7,12 @@ import Slider from "react-slick";
 import { Carousel } from "../../types/home/carousel";
 import { AuthDataInfo } from "../../utils/auth";
 
-// interface BannerEncontreProps{
-//     banner: string;
-// }
+import img1 from '../../assets/banner_01.jpg';
+import img2 from '../../assets/banner_02.jpg';
+import img3 from '../../assets/banner_03.jpg';
 
-// interface BannerSemanalProps{
-//     banner: string;
-// }
 
-// interface BannerHomeProps{
-//     banner: string;
-// }
-
-// interface BannerImgBannerProps{
-//     banner: string;
-// }
-
-interface BannerSliderProps{
+interface BannerSliderProps {
     banners: Carousel[]
 }
 export function BannerEncontre() {
@@ -49,19 +38,53 @@ export function BannerSemanal() {
 }
 
 export function BannerHome() {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 900,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false
+
+    };
     return (
         <>
-            <BannerBackground
+            {/* <BannerBackground
                 style={{ backgroundImage: `url(${img_banner_church})` }}  >
 
                 <div></div>
                 <div>
                     <img src={logo_banner} alt="" />
                 </div>
+            </BannerBackground> */}
+            
+            <DivSlider className="slider-container">
+                <Slider {...settings}>
 
+                    <div>
+                        <BannerBackground
+                            style={{ backgroundImage: `url(${img_banner_church})` }}  >
 
+                            <div></div>
+                            <div>
+                                <img src={logo_banner} alt="" />
+                            </div>
+                        </BannerBackground>
+                    </div>
+                    <div>
+                        <img src={img1} alt="Agenda semanal" />
+                    </div>
+                    <div>
+                        <img src={img2} alt="Agenda semanal" />
+                    </div>
+                    <div>
+                        <img src={img3} alt="Agenda semanal" />
+                    </div>
 
-            </BannerBackground>
+                </Slider>
+            </DivSlider>
         </>
     )
 }
@@ -87,7 +110,7 @@ export function BannerSlider(props: BannerSliderProps) {
         autoplay: true,
         autoplaySpeed: 2000,
         arrows: false
-        
+
     };
     return (
         <div className="slider-container">

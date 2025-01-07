@@ -106,6 +106,7 @@ export const ResumeCard = styled.div`
   
   height: 100px; /* Define uma altura fixa */
   min-height: 100px; /* Garantia para manter um tamanho mínimo */
+  max-height: 300px;  
   width: 100%; /* Faz o card ocupar toda a largura do grid */
 
   @media (max-width: 700px) {
