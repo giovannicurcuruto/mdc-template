@@ -40,14 +40,16 @@ export const BannerHomeSecondary = styled.div`
 `;
 
 export const DivSlider = styled.div`
-  padding-top: 123px;
+  //padding-top: 123px;
+  position: relative;
+  z-index: 500;
 `;
 
 
 export const BannerBackground = styled.div` 
   
   width: 100%;
-  height: 550px;  
+  height: 750px;  
   background-size: cover;  
   display:grid;
   grid-template-columns: minmax(350px, 1fr) 2fr ;
@@ -60,10 +62,10 @@ export const BannerBackground = styled.div`
   }
 
   div:first-child {
-    display: flex; /* Flex para manter alinhamento no espaço vazio */
+    display: flex; 
     justify-content: center;
     align-items: center;
-    height: 100%; /* Ocupa todo o espaço da coluna */
+    height: 100%; 
   }
 
   div > img{
@@ -71,5 +73,21 @@ export const BannerBackground = styled.div`
     max-width: 100%;
     height: auto;
   }
+
+`;
+
+export const ImgLogoHP = styled.div`
+  animation: fadeInUp 2s ease-out;
+  @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+  }
+
 
 `;

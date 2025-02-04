@@ -102,7 +102,7 @@ export default function VideosContent() {
     alert("Pesquisa enviada!");
   };
 
-  console.log(sermao);
+  //console.log(sermao);
 
   return (
     <>
@@ -115,7 +115,6 @@ export default function VideosContent() {
         />
         <SearchButton type="submit">Pesquisar</SearchButton>
       </FormContainer>
-
       <GridContainer>
         {sermao.map((item, index) => {
           // Função para extrair a ID do vídeo
@@ -124,7 +123,7 @@ export default function VideosContent() {
               /(?:\?v=|\/embed\/|\.be\/|\/v\/|\/watch\?v=)([a-zA-Z0-9_-]{11})/
             );
             return videoIdMatch
-              ? `https://img.youtube.com/vi/${videoIdMatch[1]}/maxresdefault.jpg`
+              ? `https://img.youtube.com/vi/${videoIdMatch[1]}/default.jpg`
               : null;
           };
 

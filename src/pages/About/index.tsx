@@ -24,7 +24,7 @@ export default function AboutPage() {
     const [sections1, setSections1] = useState<Sections_1[]>([]);
     const [sections2, setSections2] = useState<Sections_2_3[]>([]);
     const [sections3, setSections3] = useState<Sections_2_3[]>([]);
-    const [sections4, setSections4] = useState<Sections_4[]>([]);    
+    const [sections4, setSections4] = useState<Sections_4[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -43,7 +43,7 @@ export default function AboutPage() {
                     setSections1(sectionsData.section1);
                     setSections2(sectionsData.section2);
                     setSections3(sectionsData.section3);
-                    setSections4(sectionsData.section4);                    
+                    setSections4(sectionsData.section4);
 
                 } else {
                     console.error("Erro ao carregar os dados da API");
@@ -56,12 +56,12 @@ export default function AboutPage() {
                 }
             }
         };
-        
+
         fetchData();
     }, []);
     console.log(sections1[0]);
     //const titulo = sections1[0].titulo;
-    
+
 
     const img1 = `${AuthDataInfo.URL}/${sections2[0]?.foto}`;
     const img2 = `${AuthDataInfo.URL}/${sections3[0]?.foto}`;
@@ -69,7 +69,7 @@ export default function AboutPage() {
     return (
         <>
             <Main>
-                <BannerEncontre  />
+                <BannerEncontre />
                 <AboutContent>
                     <h1>{sections1[0]?.titulo}</h1>
                     <P_custom>

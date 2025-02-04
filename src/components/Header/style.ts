@@ -1,17 +1,24 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+interface ContainerProps {
+  isScrolled: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   width: 100%;
-  height: auto;
-  background-color: #80808069;
+  height: auto;  
   position: fixed;
-  z-index: 999;
+  z-index: 3999;  
+  border-bottom: 1px solid gray;
+  background-color:  ${({ isScrolled }) => (isScrolled ? "white" : "transparent")};
+
+  transition: background-color 0.3s ease-in-out;
+
 `;
 
 export const ContentRadio = styled.div`
   width: 100%;
-  padding: 1rem 0;
-  background-color: var(--mc-grey-light);
+ 
 `;
 
 export const Content = styled.nav`
@@ -37,6 +44,7 @@ interface MenuProps {
 export const Menu = styled.ul<MenuProps>`
   display: flex;
   gap: 1rem;
+  
 
   @media (max-width: 768px) {
     display: ${({ isOpen }) => (isOpen ? "block" : "none")};
@@ -82,9 +90,9 @@ export const MenuItem = styled.li`
   }
 `;
 
-export const LinkMenu = styled.a`
+export const LinkMenu = styled.a<ContainerProps>`
   text-decoration: none;
-  color: #fff;
+  color: ${({ isScrolled }) => (isScrolled ? "black" : "white")};
   font-weight: 400;
 
   &:hover {
@@ -101,4 +109,14 @@ export const DivLogo = styled.div`
     width: 100%;
     margin: 0 auto;
   }
+`;
+
+export const SocialMediaHeader = styled.div<ContainerProps>`
+  color: ${({ isScrolled }) => (isScrolled ? "black" : "white")};
+  font-weight: 400;
+  font-size: 35px;
+  svg{
+    padding-left: 45px;
+  }
+
 `;

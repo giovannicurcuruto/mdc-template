@@ -1,4 +1,4 @@
-import { BannerBackground, BannerImage, BannerSecondary, DivSlider } from "./style";
+import { BannerBackground, BannerImage, BannerSecondary, DivSlider, ImgLogoHP } from "./style";
 import img_banner from '../../assets/banner_04.jpg';
 import img_banner_semanal from '../../assets/banner_01.jpg';
 import img_banner_church from '../../assets/church.jpg';
@@ -39,26 +39,20 @@ export function BannerSemanal() {
 
 export function BannerHome() {
     const settings = {
-        dots: true,
+        //dots: true,
+        fade: true, 
+        waitforAnimate: false,
         infinite: true,
-        speed: 900,
+        speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 4000,
         arrows: false
 
     };
     return (
-        <>
-            {/* <BannerBackground
-                style={{ backgroundImage: `url(${img_banner_church})` }}  >
-
-                <div></div>
-                <div>
-                    <img src={logo_banner} alt="" />
-                </div>
-            </BannerBackground> */}
+        <>       
             
             <DivSlider className="slider-container">
                 <Slider {...settings}>
@@ -68,20 +62,36 @@ export function BannerHome() {
                             style={{ backgroundImage: `url(${img_banner_church})` }}  >
 
                             <div></div>
-                            <div>
+                            <ImgLogoHP>
                                 <img src={logo_banner} alt="" />
-                            </div>
+                            </ImgLogoHP>
                         </BannerBackground>
                     </div>
                     <div>
-                        <img src={img1} alt="Agenda semanal" />
+                        <BannerBackground
+                            style={{ backgroundImage: `url(${img1})` }}  >
+
+                            <div></div>
+  
+                        </BannerBackground>
                     </div>
                     <div>
-                        <img src={img2} alt="Agenda semanal" />
+                        <BannerBackground
+                            style={{ backgroundImage: `url(${img2})` }}  >
+
+                            <div></div>
+            
+                        </BannerBackground>
                     </div>
                     <div>
-                        <img src={img3} alt="Agenda semanal" />
+                        <BannerBackground
+                            style={{ backgroundImage: `url(${img3})` }}  >
+
+                            <div></div>
+  
+                        </BannerBackground>
                     </div>
+                    
 
                 </Slider>
             </DivSlider>

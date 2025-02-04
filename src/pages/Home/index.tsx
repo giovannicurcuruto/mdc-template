@@ -1,4 +1,4 @@
-import { BannerSecondary,  BgBox, CardContainer, ImgPastors, LastGrid, Pastors, PastorsImgContent, PastorsText, Reveal } from "./styles";
+import { ArrowStyled, BannerSecondary, BgBox, CardContainer, ImgPastors, LastGrid, Pastors, PastorsImgContent, PastorsText, Reveal, SquareStyled } from "./styles";
 //import foto_patores from "../../assets/pastors.jpg";
 import ImageText from "../../components/ImageText";
 import { BannerEncontre, BannerHome, BannerSlider } from "../../components/Banners";
@@ -11,6 +11,8 @@ import { Banner } from "../../types/home/banner";
 import { Carousel } from "../../types/home/carousel";
 import { Sections } from "../../types/home/sections";
 import ScrollReveal from "scrollreveal";
+import { Arrow, Square } from "../../components/AnimatedComponent";
+
 
 type ApiResponse = {
     success: boolean;
@@ -98,33 +100,38 @@ export default function HomePage() {
                     el.classList.add("is-visible");
                 }
             },
-            //beforeReset: (el) => el.classList.remove("is-visible"),
+
         });
     }, []);
 
-    //console.log(cards[2]?.foto)
-    //console.log(`${AuthDataInfo.URL}${sections[1]?.foto_s3}`);
 
 
     return (
         <>
             <section>
+                <SquareStyled>
+                    <Square />
+                </SquareStyled>
+                <ArrowStyled>
+
+                    <Arrow />
+                </ArrowStyled>
                 <BannerHome />                
-                    <Pastors>
-                        <PastorsImgContent>
-                            <BgBox />
-                            <ImgPastors
-                                alt="Foto Pastor Junior e Victoria Batista"
-                                src={`${AuthDataInfo.URL}${sections[0]?.foto_s1}`}
-                            />
-                        </PastorsImgContent>
-                        <PastorsText>
-                            <h2>{sections[0]?.titulo}</h2>
-                            <p>{sections[0]?.texto}</p>
-                            <button className={"button"} type="button">Saiba Mais</button>
-                        </PastorsText>
-                    </Pastors>
-                
+                <Pastors>
+                    <PastorsImgContent>
+                        <BgBox />
+                        <ImgPastors
+                            alt="Foto Pastor Junior e Victoria Batista"
+                            src={`${AuthDataInfo.URL}${sections[0]?.foto_s1}`}
+                        />
+                    </PastorsImgContent>
+                    <PastorsText>
+                        <h2>{sections[0]?.titulo}</h2>
+                        <p>{sections[0]?.texto}</p>
+                        <button className={"button"} type="button">Saiba Mais</button>
+                    </PastorsText>
+                </Pastors>
+
                 <Reveal className="reveal">
                     <BannerSecondary>
                         <BannerSlider banners={carousel} />
@@ -160,12 +167,12 @@ export default function HomePage() {
                             texto={sections[1]?.texto} />
                     </LastGrid>
                 </Reveal>
-                
-                
+
+
 
 
             </section>
-            
+
             {/* <BarraFixa>Seja Bem vindo a Mais de Cristo! </BarraFixa> */}
         </>
     )

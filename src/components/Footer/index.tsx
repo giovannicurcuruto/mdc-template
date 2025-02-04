@@ -1,7 +1,8 @@
-import { Content, ContentFooter, ContentFooterSocialMedia, Footer, LogoFooter, SocialMedia } from "./style";
+import { Content, ContentFooter, ContentFooterSocialMedia, Footer, LogoFooter } from "./style";
 
 import logo from '../../assets/logo2.png';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SocialMediaComponent from "../SocialMedia";
 
 //importações para definição do layout
 
@@ -44,37 +45,8 @@ export default function FooterComponent() {
                     </Content>
                 </ContentFooter>
             </Footer>
-            <ContentFooterSocialMedia>
-                <SocialMedia>
-                    <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>                        
-                        <FontAwesomeIcon icon={['fab', 'soundcloud']}  />
-                    </a>
-                </SocialMedia>
-                <SocialMedia>
-                    <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>                        
-                        <FontAwesomeIcon icon={['fab', 'instagram']}  />
-                    </a>
-                </SocialMedia>
-                <SocialMedia>
-                    <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>                        
-                        <FontAwesomeIcon icon={['fab', 'x-twitter']}  />
-                    </a>
-                </SocialMedia>
-                <SocialMedia>
-                    <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>                        
-                        <FontAwesomeIcon icon={['fab', 'youtube']}  />
-                    </a>
-                </SocialMedia>
-                <SocialMedia>
-                    <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>                        
-                        <FontAwesomeIcon icon={['fab', 'spotify']}  />
-                    </a>
-                </SocialMedia>
-                <SocialMedia>
-                    <a href='https://www.facebook.com/MaisDeCristoOficial/' target='_blank'>                        
-                        <FontAwesomeIcon icon={['fab', 'soundcloud']}  />
-                    </a>
-                </SocialMedia>
+            <ContentFooterSocialMedia>                
+                <SocialMediaComponent/>
             </ContentFooterSocialMedia>
 
         </>

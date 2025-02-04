@@ -159,3 +159,115 @@ export const BarraFixa = styled.div`
   
 
 `;
+
+export const SquareStyled = styled.div`
+  position: absolute;
+  left: 250px;
+  top: 200px;
+  z-index: 1000;
+
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: squareMove;
+  
+  @keyframes squareMove {
+    0%{
+      transform: translate(0px, 0px);
+    }
+    15%{
+      transform: translate(0px, 200px);
+    }
+    30%{
+      transform: translate(-20px, 20px);
+    }
+    45%{
+      transform: translate(-20px, 40px);
+    }
+    60%{
+      transform: translate(-25px, 30px);
+    }
+    75%{
+      transform: translate(-20px, 20px);
+    }
+    90%{
+      transform: translate(0px, 20px);
+    }
+    100%{
+      transform: translate(0px, 0px);
+    }
+  }
+
+
+`;
+
+export const ArrowStyled = styled.div`
+  position: absolute;
+  top: 200px;
+  right: 350px;
+  z-index: 1000;
+  
+  animation: 6s;
+  animation-iteration-count: infinite;
+  animation-name: arrowMove;
+  animation-timing-function: ease-in-out;
+
+  @keyframes arrowMove{
+    0%{
+      transform: translate(0px, 0px);
+    }
+    65%{
+      transform: translate(0, 30px);
+    }
+    100%{
+      transform: translate (0px, 0px);
+    }
+  }
+
+
+`;
+
+export const BalaoDiv = styled.div`
+position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: var(--max-width);
+  margin: 0 auto;  
+  justify-content: center;  
+  gap: 4rem;  
+  bottom: 80px;
+  z-index:4000;
+
+
+`;
+
+export const DivTeste = styled.div`
+  width: 100%;
+  height: 150px;
+  background-color: #323233;
+  opacity: 70%;
+  border-radius: 10px;  
+  text-align: center;
+  margin: 0 auto;
+  border-color: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  span{
+    opacity: 1;
+    color: white;
+  }
+
+  svg{
+    font-size: 50px;
+    color: white;
+  }
+
+`;
