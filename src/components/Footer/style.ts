@@ -60,7 +60,8 @@ export const LogoFooter = styled.img`
 `;
 
 export const ContentFooterSocialMedia = styled.div`
-  background-color: var(--primary-color);
+  //background-color: var(--primary-color);
+  background-color: white;
   margin: auto;
   display: flex;
   gap: 1rem;
